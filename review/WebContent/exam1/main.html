@@ -17,25 +17,18 @@
 			   1. 자바스크립트
 			   2. jquery
 			*/
-
-			var index = 0;
-
-			$("img").click(function(){
-				index = $(this).index();
-				// 	console.log(this.alt);
-				// 	$(this).attr('src', $(this).attr('src').replace('off', 'on'));
-				// 	$(".content").load(this.alt + '.html');
-				// 	console.log(index);
+			
+			$("img").bind("click", function(){
+				
 				$(".content").load(this.alt + '.html');
 
 				$(".header li img").each((idx) => {
-					console.log("index : " + index);
-					console.log("idx : " + idx);
-					$(this).attr('src', $(this).attr('src').replace('on', 'off'));
+					var offTarget = ".header li img";
+					$(offTarget).attr('src', $(offTarget).attr('src').replace('on', 'off'));
 				});
 
 				$(this).attr('src', $(this).attr('src').replace('off', 'on'));
-			})
+			});
 		});
 	</script>
 </head>

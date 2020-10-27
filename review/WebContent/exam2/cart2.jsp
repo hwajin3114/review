@@ -9,27 +9,27 @@
 <script>
 	// 체크한 상품의 수량과 단가의 곱의 전체 합계를 출력하시오.
 	$(function() {
-		
-		$("#btn").click(function() {
+
+		$("#btn").bind("click", function() {
+
 			console.log("계산");
 			var count = 0;
 			var price = 0;
 			var sum = 0;
-			
+
 			// 체크된 체크박스 값을 가져온다
 			$(":checkbox:checked").each(function(i) {
 				var tr = $(":checkbox:checked").parent().parent().eq(i);
 				var td = tr.children();
-								
+
 				count = parseInt(td.eq(2).text());
 				price = parseInt(td.eq(3).text());
 				sum += price * count;
 			});
-			
-			$("#total").html(sum);	
+
+			$("#total").html(sum);
 		});
 	});
-
 </script>
 </head>
 <body>
